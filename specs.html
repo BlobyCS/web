@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlobyCZ | Specs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-purple-400 hover:text-purple-300 transition">
+                    <i class="fas fa-code mr-2"></i>Bloby
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home mr-2"></i>Domů
+                    </a>
+                    <a href="specs.html" class="nav-link active">
+                        <i class="fas fa-laptop mr-2"></i>Vybavení
+                    </a>
+                    <a href="info.html" class="nav-link">
+                        <i class="fas fa-info-circle mr-2"></i>Informace
+                    </a>
+                </div>
+                <button class="md:hidden text-gray-300" id="mobileMenuBtn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div class="md:hidden hidden mt-4 pb-4" id="mobileMenu">
+                <a href="index.html" class="block py-2 nav-link">
+                    <i class="fas fa-home mr-2"></i>Domů
+                </a>
+                <a href="specs.html" class="block py-2 nav-link active">
+                    <i class="fas fa-laptop mr-2"></i>Vybavení
+                </a>
+                <a href="info.html" class="block py-2 nav-link">
+                    <i class="fas fa-info-circle mr-2"></i>Informace
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16 animate-fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                    <i class="fas fa-laptop-code mr-4"></i>Moje Vybavení
+                </h1>
+                <p class="text-xl text-gray-400">Hardware a software, které používám</p>
+            </div>
+
+            <!-- PC Sestava -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-desktop text-purple-400 mr-3"></i>
+                    Počítač
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-cube text-4xl text-purple-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">PC Case</h3>
+                                <p class="text-gray-300">Fracture Design</p>
+                                <p class="text-sm text-gray-500">Skříň</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-microchip text-4xl text-blue-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Procesor</h3>
+                                <p class="text-gray-300">Intel Core i5-8400</p>
+                                <p class="text-sm text-gray-500">6 jader @ 2.8GHz</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-gamepad text-4xl text-green-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Grafická Karta</h3>
+                                <p class="text-gray-300">NVIDIA GTX 1060</p>
+                                <p class="text-sm text-gray-500">6GB VRAM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-memory text-4xl text-yellow-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">RAM</h3>
+                                <p class="text-gray-300">16GB DDR4</p>
+                                <p class="text-sm text-gray-500">Dual Channel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-hdd text-4xl text-cyan-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">SSD</h3>
+                                <p class="text-gray-300">256 GB</p>
+                                <p class="text-sm text-gray-500">Systém (Windows 11 & Linux)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-database text-4xl text-orange-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">HDD</h3>
+                                <p class="text-gray-300">2TB</p>
+                                <p class="text-sm text-gray-500">Hry & Data</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 md:col-span-2">
+                        <div class="flex items-start gap-4">
+                            <i class="fab fa-windows text-4xl text-blue-500"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Operační Systémy</h3>
+                                <p class="text-gray-300">Dual Boot Setup</p>
+                                <div class="flex gap-3 mt-3">
+                                    <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm flex items-center gap-2">
+                                        <i class="fab fa-windows"></i> Windows 11
+                                    </span>
+                                    <span class="px-3 py-1 bg-orange-900/30 text-orange-400 rounded-full text-sm flex items-center gap-2">
+                                        <i class="fab fa-linux"></i> Linux
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Periférie -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-mouse text-purple-400 mr-3"></i>
+                    Periférie
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-keyboard text-4xl text-red-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Klávesnice</h3>
+                                <p class="text-gray-300">Connect IT CKB-5600-CS</p>
+                                <p class="text-sm text-gray-500">Mechanická</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-mouse-pointer text-4xl text-indigo-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Myš</h3>
+                                <p class="text-gray-300">GX Trust</p>
+                                <p class="text-sm text-gray-500">Gaming Mouse</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-microphone text-4xl text-pink-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Mikrofon</h3>
+                                <p class="text-gray-300">CTech MIC-02</p>
+                                <p class="text-sm text-gray-500">Studio Quality</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-tv text-4xl text-teal-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Monitor #1</h3>
+                                <p class="text-gray-300">Dell S2425HSM</p>
+                                <p class="text-sm text-gray-500">23.8" | FHD 1920x1080</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-desktop text-4xl text-violet-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Monitor #2</h3>
+                                <p class="text-gray-300">PHILIPS 203V</p>
+                                <p class="text-sm text-gray-500">HD 1600x900</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobilní Zařízení -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-mobile-alt text-purple-400 mr-3"></i>
+                    Mobilní Zařízení
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-mobile-screen text-4xl text-blue-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Smartphone</h3>
+                                <p class="text-gray-300">Samsung Galaxy A52 5G</p>
+                                <p class="text-sm text-gray-500">6.5" Super AMOLED | 128GB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-clock text-4xl text-green-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Smartwatch</h3>
+                                <p class="text-gray-300">TicWatch Pro 5</p>
+                                <p class="text-sm text-gray-500">Wear OS | AMOLED Display</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Software -->
+            <div>
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-code text-purple-400 mr-3"></i>
+                    Software & Nástroje
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 text-center">
+                        <i class="fas fa-laptop-code text-5xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">IntelliJ IDEA</h3>
+                        <p class="text-gray-400">Java development</p>
+                    </div>
+
+                    <div class="glass-card p-6 text-center">
+                        <i class="fas fa-code text-5xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">VS Code</h3>
+                        <p class="text-gray-400">JavaScript/TypeScript</p>
+                    </div>
+
+                    <div class="glass-card p-6 text-center">
+                        <i class="fab fa-git-alt text-5xl text-orange-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Git</h3>
+                        <p class="text-gray-400">Version control</p>
+                    </div>
+
+                    <div class="glass-card p-6 text-center">
+                        <i class="fab fa-docker text-5xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Docker</h3>
+                        <p class="text-gray-400">Containerization</p>
+                    </div>
+
+                    <div class="glass-card p-6 text-center">
+                        <i class="fas fa-terminal text-5xl text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Terminal</h3>
+                        <p class="text-gray-400">Windows Terminal & Bash</p>
+                    </div>
+
+                    <div class="glass-card p-6 text-center">
+                        <i class="fab fa-npm text-5xl text-red-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">NPM</h3>
+                        <p class="text-gray-400">Package manager</p>
+                    </div>
+
+                    <div class="glass-card p-6 text-center">
+                        <i class="fab fa-node-js text-5xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Node.js</h3>
+                        <p class="text-gray-400">Runtime environment</p>
+                    </div>
+
+                    <div class="glass-card p-6 text-center">
+                        <i class="fab fa-discord text-5xl text-indigo-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Discord.js</h3>
+                        <p class="text-gray-400">Bot development</p>
+                    </div>
+
+                    <div class="glass-card p-6 text-center">
+                        <i class="fas fa-cube text-5xl text-orange-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Spigot/Paper</h3>
+                        <p class="text-gray-400">Minecraft plugins</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8 mt-20">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2024 Bloby. Udělal z <i class="fas fa-heart text-red-500"></i></p>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
