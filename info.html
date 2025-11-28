@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://minotar.net/helm/BlobyCZ/600.png" type="image/png" />
-    <title>Informace | BlobyCZ</title>
+    <title>BlobyCZ | Info</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body class="bg-gray-900 text-gray-100">
 
-    <!-- Navbar -->
     <nav class="fixed w-full top-0 z-50 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <a href="index.html" class="text-2xl font-bold text-purple-400 hover:text-purple-300 transition">
@@ -19,8 +18,9 @@
             </a>
             <div class="hidden md:flex space-x-6">
                 <a href="index.html" class="nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
+                <a href="projects.html" class="nav-link active"><i class="fas fa-folder-open mr-1"></i>Projekty</a>
                 <a href="specs.html" class="nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
-                <a href="info.html" class="nav-link active"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+                <a href="info.html" class="nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
                 <a href="about.html" class="nav-link"><i class="fas fa-user mr-1"></i>O mně</a>
             </div>
             <button class="md:hidden text-gray-300" id="mobileMenuBtn">
@@ -29,12 +29,13 @@
         </div>
         <div class="md:hidden hidden px-6 pb-4" id="mobileMenu">
             <a href="index.html" class="block py-2 nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
+            <a href="projects.html" class="block py-2 nav-link active"><i class="fas fa-folder-open mr-1"></i>Projekty</a>
             <a href="specs.html" class="block py-2 nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
-            <a href="info.html" class="block py-2 nav-link active"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+            <a href="info.html" class="block py-2 nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
             <a href="about.html" class="block py-2 nav-link"><i class="fas fa-user mr-1"></i>O mně</a>
         </div>
     </nav>
-
+    
     <!-- Content -->
     <section class="pt-32 pb-20 px-6">
         <div class="container mx-auto max-w-6xl">
@@ -195,3 +196,4 @@
     <script src="script/script.js"></script>
 </body>
 </html>
+
