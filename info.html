@@ -11,6 +11,7 @@
 </head>
 <body class="bg-gray-900 text-gray-100">
 
+    <!-- Navbar -->
     <nav class="fixed w-full top-0 z-50 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <a href="index.html" class="text-2xl font-bold text-purple-400 hover:text-purple-300 transition">
@@ -18,9 +19,9 @@
             </a>
             <div class="hidden md:flex space-x-6">
                 <a href="index.html" class="nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
-                <a href="projects.html" class="nav-link active"><i class="fas fa-folder-open mr-1"></i>Projekty</a>
+                <a href="projects.html" class="nav-link"><i class="fas fa-folder-open mr-1"></i>Projekty</a>
                 <a href="specs.html" class="nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
-                <a href="info.html" class="nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+                <a href="info.html" class="nav-link active"><i class="fas fa-info-circle mr-1"></i>Informace</a>
                 <a href="about.html" class="nav-link"><i class="fas fa-user mr-1"></i>O mně</a>
             </div>
             <button class="md:hidden text-gray-300" id="mobileMenuBtn">
@@ -29,13 +30,13 @@
         </div>
         <div class="md:hidden hidden px-6 pb-4" id="mobileMenu">
             <a href="index.html" class="block py-2 nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
-            <a href="projects.html" class="block py-2 nav-link active"><i class="fas fa-folder-open mr-1"></i>Projekty</a>
+            <a href="projects.html" class="block py-2 nav-link"><i class="fas fa-folder-open mr-1"></i>Projekty</a>
             <a href="specs.html" class="block py-2 nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
-            <a href="info.html" class="block py-2 nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+            <a href="info.html" class="block py-2 nav-link active"><i class="fas fa-info-circle mr-1"></i>Informace</a>
             <a href="about.html" class="block py-2 nav-link"><i class="fas fa-user mr-1"></i>O mně</a>
         </div>
     </nav>
-    
+
     <!-- Content -->
     <section class="pt-32 pb-20 px-6">
         <div class="container mx-auto max-w-6xl">
@@ -88,44 +89,38 @@
                     Vybrané Projekty
                 </h2>
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="glass-card p-6">
-                        <div class="flex items-start gap-4">
-                            <i class="fas fa-cube text-3xl text-green-500"></i>
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold mb-2">Minecraft Plugin</h3>
-                                <p class="text-gray-400 mb-4">Custom plugin pro Minecraft servery s pokročilými funkcemi</p>
-                                <div class="flex gap-2 flex-wrap">
-                                    <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-sm">Java</span>
-                                    <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">Spigot</span>
-                                </div>
+                    <div class="glass-card p-6 flex items-start gap-4">
+                        <i class="fas fa-cube text-3xl text-green-500"></i>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Minecraft Plugin</h3>
+                            <p class="text-gray-400 mb-4">Custom plugin pro Minecraft servery s pokročilými funkcemi</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-sm">Java</span>
+                                <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">Spigot</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-card p-6">
-                        <div class="flex items-start gap-4">
-                            <i class="fab fa-discord text-3xl text-indigo-500"></i>
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold mb-2">Discord Bot</h3>
-                                <p class="text-gray-400 mb-4">Multifunkční bot s moderačními a zábavnými příkazy</p>
-                                <div class="flex gap-2 flex-wrap">
-                                    <span class="px-3 py-1 bg-yellow-900/30 text-yellow-400 rounded-full text-sm">JavaScript</span>
-                                    <span class="px-3 py-1 bg-indigo-900/30 text-indigo-400 rounded-full text-sm">Discord.js</span>
-                                </div>
+                    <div class="glass-card p-6 flex items-start gap-4">
+                        <i class="fab fa-discord text-3xl text-indigo-500"></i>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Discord Bot</h3>
+                            <p class="text-gray-400 mb-4">Multifunkční bot s moderačními a zábavnými příkazy</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-3 py-1 bg-yellow-900/30 text-yellow-400 rounded-full text-sm">JavaScript</span>
+                                <span class="px-3 py-1 bg-indigo-900/30 text-indigo-400 rounded-full text-sm">Discord.js</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-card p-6">
-                        <div class="flex items-start gap-4">
-                            <i class="fab fa-npm text-3xl text-red-500"></i>
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold mb-2">NPM Package</h3>
-                                <p class="text-gray-400 mb-4">Utility knihovna pro Node.js vývojáře</p>
-                                <div class="flex gap-2 flex-wrap">
-                                    <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">TypeScript</span>
-                                    <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-sm">Node.js</span>
-                                </div>
+                    <div class="glass-card p-6 flex items-start gap-4">
+                        <i class="fab fa-npm text-3xl text-red-500"></i>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">NPM Package</h3>
+                            <p class="text-gray-400 mb-4">Utility knihovna pro Node.js vývojáře</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">TypeScript</span>
+                                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-sm">Node.js</span>
                             </div>
                         </div>
                     </div>
@@ -196,4 +191,3 @@
     <script src="script/script.js"></script>
 </body>
 </html>
-
