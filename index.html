@@ -3,118 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloby – Developer</title>
     <link rel="icon" href="https://minotar.net/helm/BlobyCZ/600.png" type="image/png" />
-    <title>BlobyCZ | Domů</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/5f2e722ecf.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-gray-900 text-gray-100">
-    <!-- Navbar -->
-    <nav class="fixed w-full top-0 z-50 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-purple-400 hover:text-purple-300 transition">
-                <i class="fas fa-code mr-2"></i>Bloby
-            </a>
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
-                <a href="specs.html" class="nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
-                <a href="info.html" class="nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
-                <a href="about.html" class="nav-link active"><i class="fas fa-user mr-1"></i>O mně</a>
-            </div>
-            <button class="md:hidden text-gray-300" id="mobileMenuBtn">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-        <div class="md:hidden hidden px-6 pb-4" id="mobileMenu">
-            <a href="index.html" class="block py-2 nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
-            <a href="specs.html" class="block py-2 nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
-            <a href="info.html" class="block py-2 nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
-            <a href="about.html" class="block py-2 nav-link active"><i class="fas fa-user mr-1"></i>O mně</a>
-        </div>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6">
-        <div class="container mx-auto">
-            <div class="text-center mb-16 animate-fade-in">
-                <div class="inline-block mb-6">
-                    <div class="w-32 h-32 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center overflow-hidden">
-                        <img src="https://minotar.net/helm/BlobyCZ/600.png" alt="Bloby avatar" class="w-full h-full object-cover"/>
-                    </div>
-                </div>
-                <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                    Ahoj, jsem Bloby
-                </h1>
-                <p class="text-xl text-gray-400 mb-8">Developer & Creator</p>
-                <div class="flex justify-center gap-4">
-                    <a href="https://github.com/bloby22/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://discord.com/users/1178258199590228078" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Discord">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                    <a href="https://open.spotify.com/user/31qyp5t2f4nvitbwdfc52nypjd7a?si=a62ac70cf9e54109" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Spotify">
-                        <i class="fab fa-spotify"></i>
-                    </a>
-                    <a href="mailto:michal@bloby.eu" class="social-icon" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://fearline.eu" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Website">
-                        <i class="fas fa-globe"></i>
-                    </a>
-                </div>
-            </div>
 
-            <!-- O mně karta -->
-            <div class="max-w-4xl mx-auto mb-20">
-                <div class="glass-card p-8 md:p-12 animate-slide-up">
-                    <div class="flex items-center mb-6">
-                        <i class="fas fa-user-circle text-3xl text-purple-400 mr-4"></i>
-                        <h2 class="text-3xl font-bold">O mně</h2>
-                    </div>
-                    <p class="text-lg text-gray-300 leading-relaxed">
-                        Pocházím z Brna a mám rád technologie, hudbu a dělání smysluplných projektů. 
-                        Kóďím převážně v Javě a JavaScriptu, tvořím Minecraft pluginy, Discord boty a NPM balíčky. 
-                        Baví mě zkoušet nové věci a experimentovat s různými nápady.
-                    </p>
-                </div>
-            </div>
+<body class="bg-gray-900 text-white">
 
-            <!-- Zkušenosti -->
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">
-                    <i class="fas fa-code mr-3 text-purple-400"></i>Technologie & Zkušenosti
-                </h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="skill-card">
-                        <i class="fab fa-java text-5xl text-red-500 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Java</h3>
-                        <p class="text-gray-400">Backend development, Minecraft pluginy</p>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-js text-5xl text-yellow-400 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">JavaScript</h3>
-                        <p class="text-gray-400">Discord boty, NPM balíčky, Web development</p>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-js text-5xl text-blue-400 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">TypeScript</h3>
-                        <p class="text-gray-400">Backend aplikace, Type-safe development</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ---------- NAVBAR ---------- -->
+<nav class="fixed w-full top-0 z-50 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="text-2xl font-bold text-purple-400 hover:text-purple-300 transition">
+      <i class="fas fa-code mr-2"></i>Bloby
+    </a>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 border-t border-gray-700 py-8 mt-20">
-        <div class="container mx-auto px-6 text-center text-gray-400">
-            <p>&copy; 2024 Bloby. Udělal z <i class="fas fa-heart text-red-500"></i></p>
+    <div class="hidden md:flex space-x-6" id="desktopNav">
+      <a href="index.html" class="nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
+      <a href="specs.html" class="nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
+      <a href="info.html" class="nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+      <a href="about.html" class="nav-link"><i class="fas fa-user mr-1"></i>O mně</a>
+    </div>
+
+    <button class="md:hidden text-gray-300" id="mobileMenuBtn" aria-label="Menu">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+
+  <div class="md:hidden hidden px-6 pb-4" id="mobileMenu">
+    <a href="index.html" class="block py-2 nav-link">Domů</a>
+    <a href="specs.html" class="block py-2 nav-link">Vybavení</a>
+    <a href="info.html" class="block py-2 nav-link">Informace</a>
+    <a href="about.html" class="block py-2 nav-link">O mně</a>
+  </div>
+</nav>
+<!-- ---------- /NAVBAR ---------- -->
+
+
+<!-- ---------- HERO SECTION ---------- -->
+<section class="pt-32 pb-24 text-center">
+    <h1 class="text-5xl font-extrabold text-purple-400 drop-shadow-lg">Ahoj, jsem Bloby</h1>
+    <p class="mt-4 text-gray-300 text-lg max-w-2xl mx-auto">
+        Developer zaměřený na Java pluginy, FiveM, NodeJS, TypeScript, Discord boti, NPM balíčky a technický bordel, který normální lidi nepotřebují.
+    </p>
+
+    <div class="mt-8 flex justify-center space-x-4">
+        <a href="about.html" class="px-6 py-3 bg-purple-500/80 hover:bg-purple-500 rounded-lg font-semibold transition">O mně</a>
+        <a href="specs.html" class="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold transition">Mé vybavení</a>
+    </div>
+</section>
+
+
+<!-- ---------- TECHNOLOGIE ---------- -->
+<section class="py-20 bg-gray-800/40 border-t border-b border-gray-700">
+    <h2 class="text-3xl font-bold text-center text-purple-300 mb-12">Technologie & Tools</h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto text-center text-gray-300">
+
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">NodeJS</div>
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">NPM</div>
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">Java</div>
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">TypeScript</div>
+
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">JavaScript</div>
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">Spigot</div>
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">IntelliJ IDEA</div>
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">Visual Studio Code</div>
+
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">Linux</div>
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">Windows</div>
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">Terminal</div>
+        <div class="p-4 bg-gray-800 rounded-xl border border-gray-700">FiveM</div>
+
+    </div>
+</section>
+
+
+<!-- ---------- PROJECTS SECTION ---------- -->
+<section class="py-20">
+    <h2 class="text-3xl font-bold text-center text-purple-300 mb-12">Moje Projekty</h2>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+
+        <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-purple-400 transition">
+            <h3 class="text-xl font-semibold text-purple-300">InsaneKick</h3>
+            <p class="text-gray-300 mt-2">Minecraft plugin zaměřený na eventy, když spadneš – tak prostě padáš.</p>
         </div>
-    </footer>
-    
-    <script src="script/script.js"></script>
+
+        <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-purple-400 transition">
+            <h3 class="text-xl font-semibold text-purple-300">ZikyZone</h3>
+            <p class="text-gray-300 mt-2">Discord bot postavený na NodeJS a DiscordJS.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-purple-400 transition">
+            <h3 class="text-xl font-semibold text-purple-300">FrontHelp</h3>
+            <p class="text-gray-300 mt-2">IntelliJ plugin pomáhající s přehledným workflow.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ---------- FOOTER ---------- -->
+<footer class="py-8 text-center text-gray-400 border-t border-gray-700">
+    © 2025 Bloby – Developer
+</footer>
+
+
+<!-- ---------- SCRIPT (menu + active link) ---------- -->
+<script>
+  (function () {
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) mobileMenu.classList.add('hidden');
+      });
+    }
+
+    function setActiveNav() {
+      const allLinks = document.querySelectorAll('nav .nav-link');
+      let path = window.location.pathname.split('/').pop();
+      if (!path) path = 'index.html';
+      const clean = path.replace(/\.html?$/, '');
+
+      allLinks.forEach(a => {
+        const href = a.getAttribute('href') || '';
+        const ref = href.replace(/\.html?$/, '');
+        if (href === path || ref === clean) {
+          a.classList.add('active');
+        } else {
+          a.classList.remove('active');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', setActiveNav);
+  })();
+</script>
+
 </body>
 </html>
-
