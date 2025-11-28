@@ -16,8 +16,8 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const PORT = process.env.PORT || 3000
 
 if (!CLIENT_ID || !CLIENT_SECRET || !REDIRECT_URI) {
-  console.error('Missing SPOTIFY_CLIENT / SPOTIFY_SECRET / SPOTIFY_REDIRECT in .env')
-  process.exit(1)
+  console.error('Missing SPOTIFY_CLIENT / SPOTIFY_SECRET / SPOTIFY_REDIRECT in environment')
+  if (!process.env.VERCEL) process.exit(1)
 }
 
 const app = express()
@@ -246,7 +246,11 @@ app.get('/github/stats', async (req, res) => {
   }
 })
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`)
-  console.log(`Open /login to authorize one Spotify account (redirect URI: ${REDIRECT_URI})`)
-})
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`)
+    console.log(`Open /login to authorize one Spotify account (redirect URI: ${REDIRECT_URI})`)
+  })
+}
+
+export default app
