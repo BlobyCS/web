@@ -1,0 +1,198 @@
+/* Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #111827;
+    color: #f3f4f6;
+    line-height: 1.6;
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: rgba(31, 41, 55, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+    background: rgba(31, 41, 55, 0.85);
+    border-color: rgba(167, 139, 250, 0.35);
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 25px 45px rgba(147, 51, 234, 0.25);
+}
+
+/* Navigation Links */
+.nav-link {
+    color: #d1d5db;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #a78bfa;
+    background: rgba(167, 139, 250, 0.1);
+}
+
+.nav-link.active {
+    color: #a78bfa;
+    background: rgba(167, 139, 250, 0.15);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 2px;
+    background: #a78bfa;
+    border-radius: 2px;
+}
+
+/* Social Icons */
+.social-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-radius: 14px;
+    color: #a78bfa;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: rgba(167, 139, 250, 0.18);
+    border-color: #a78bfa;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(167, 139, 250, 0.28);
+}
+
+/* Stat & Skill Cards */
+.stat-card,
+.skill-card {
+    background: rgba(31, 41, 55, 0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card:hover,
+.skill-card:hover {
+    background: rgba(31, 41, 55, 0.85);
+    border-color: rgba(167, 139, 250, 0.3);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.65s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.85s ease-out forwards;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(167, 139, 250, 0.5);
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(167, 139, 250, 0.75);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Loading State */
+.loading {
+    opacity: 0.5;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.85;
+    }
+}
+
+/* Spotify Progress Bar */
+#spotifyProgress {
+    transition: width 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #spotifyWidget {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+    }
+    
+    #spotifyWidget .glass-card {
+        width: 100%;
+    }
+}
