@@ -31,19 +31,6 @@ async function fetchGitHubStats() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  fetchGitHubStats()
-  setInterval(fetchGitHubStats, 60 * 1000)
-
-  // Smooth scroll
-  const anchors = document.querySelectorAll('a[href^="#"]')
-  anchors.forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault()
-      const target = document.querySelector(a.getAttribute('href'))
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    })
-  })
 
   // Animate cards
   const observer = new IntersectionObserver(entries => {
