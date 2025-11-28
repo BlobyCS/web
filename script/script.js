@@ -62,16 +62,4 @@ document.addEventListener('DOMContentLoaded', function() {
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
     observer.observe(el)
   })
-
-  // Remove .html from links
-  const navLinks = document.querySelectorAll('a.nav-link')
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      const href = link.getAttribute('href')
-      if (href.endsWith('.html')) {
-        e.preventDefault()
-        window.location.href = href.replace('.html', '')
-      }
-    })
-  })
 })
