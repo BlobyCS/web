@@ -59,32 +59,68 @@
 
     <!-- Projekty Grid -->
     <section class="max-w-6xl mx-auto px-6 mb-20 grid md:grid-cols-3 gap-6">
-        <!-- Minecraft Plugin -->
-        <div class="project-card glass-card p-6 flex flex-col items-start animate-slide-up" data-type="minecraft">
-            <h3 class="text-2xl font-bold mb-2"><i class="fab fa-java mr-2"></i>InsaneKick</h3>
-            <p class="text-gray-300 mb-4">Minecraft plugin pro eventy a různé funkce při pádu.</p>
-            <a href="#" class="text-purple-400 hover:underline">Více info</a>
+
+        <!-- Projekt karta -->
+        <div class="project-card glass-card p-6 flex flex-col items-start animate-slide-up hover:scale-105 transition-transform" data-type="minecraft">
+            <h3 class="text-2xl font-bold mb-2 flex items-center">
+                <i class="fab fa-java mr-2"></i>InsaneKick
+            </h3>
+            <p class="text-gray-300 mb-2">Minecraft plugin pro eventy a funkce při pádu.</p>
+            <div class="mb-2">
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-sm mr-2">Java</span>
+                <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">Spigot</span>
+            </div>
+            <button class="toggle-info mt-2 text-purple-400 hover:underline">Více info</button>
+            <div class="project-info hidden mt-2 text-gray-400 text-sm">
+                Tento plugin umožňuje spravovat eventy, zachytávat pád hráče a spouštět speciální efekty. Vhodné pro herní servery, které chtějí mít interaktivní a zábavné funkce.
+            </div>
         </div>
 
-        <div class="project-card glass-card p-6 flex flex-col items-start animate-slide-up" data-type="minecraft">
-            <h3 class="text-2xl font-bold mb-2"><i class="fab fa-java mr-2"></i>FrontHelp</h3>
-            <p class="text-gray-300 mb-4">IntelliJ plugin pro pomoc při frontách a eventech.</p>
-            <a href="#" class="text-purple-400 hover:underline">Více info</a>
+        <div class="project-card glass-card p-6 flex flex-col items-start animate-slide-up hover:scale-105 transition-transform" data-type="minecraft">
+            <h3 class="text-2xl font-bold mb-2 flex items-center">
+                <i class="fas fa-code mr-2"></i>FrontHelp
+            </h3>
+            <p class="text-gray-300 mb-2">IntelliJ plugin pro pomoc při frontách a eventech.</p>
+            <div class="mb-2">
+                <span class="px-3 py-1 bg-purple-900/30 text-purple-400 rounded-full text-sm mr-2">Java</span>
+                <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">IntelliJ</span>
+            </div>
+            <button class="toggle-info mt-2 text-purple-400 hover:underline">Více info</button>
+            <div class="project-info hidden mt-2 text-gray-400 text-sm">
+                FrontHelp poskytuje nástroje pro efektivní správu front a eventů přímo v IntelliJ. Umožňuje rychle reagovat na situace a zlepšuje workflow.
+            </div>
         </div>
 
-        <!-- NPM Package -->
-        <div class="project-card glass-card p-6 flex flex-col items-start animate-slide-up" data-type="npm">
-            <h3 class="text-2xl font-bold mb-2"><i class="fab fa-node-js mr-2"></i>Quanta</h3>
-            <p class="text-gray-300 mb-4">NPM balíček pro rychlé utility a backend funkce.</p>
-            <a href="#" class="text-purple-400 hover:underline">Více info</a>
+        <div class="project-card glass-card p-6 flex flex-col items-start animate-slide-up hover:scale-105 transition-transform" data-type="npm">
+            <h3 class="text-2xl font-bold mb-2 flex items-center">
+                <i class="fab fa-node-js mr-2"></i>Quanta
+            </h3>
+            <p class="text-gray-300 mb-2">NPM balíček pro rychlé utility a backend funkce.</p>
+            <div class="mb-2">
+                <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm mr-2">TypeScript</span>
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-sm">Node.js</span>
+            </div>
+            <button class="toggle-info mt-2 text-purple-400 hover:underline">Více info</button>
+            <div class="project-info hidden mt-2 text-gray-400 text-sm">
+                Quanta nabízí utility funkce pro Node.js, zjednodušuje práci s daty, soubory a API. Ideální pro rychlý start backend projektů.
+            </div>
         </div>
 
-        <!-- Discord Bot -->
-        <div class="project-card glass-card p-6 flex flex-col items-start animate-slide-up" data-type="discord">
-            <h3 class="text-2xl font-bold mb-2"><i class="fab fa-discord mr-2"></i>ZikyZone</h3>
-            <p class="text-gray-300 mb-4">Discord bot s funkcemi pro moderaci a zábavu.</p>
-            <a href="#" class="text-purple-400 hover:underline">Více info</a>
+        <div class="project-card glass-card p-6 flex flex-col items-start animate-slide-up hover:scale-105 transition-transform" data-type="discord">
+            <h3 class="text-2xl font-bold mb-2 flex items-center">
+                <i class="fab fa-discord mr-2"></i>ZikyZone
+            </h3>
+            <p class="text-gray-300 mb-2">Discord bot s funkcemi pro moderaci a zábavu.</p>
+            <div class="mb-2">
+                <span class="px-3 py-1 bg-yellow-900/30 text-yellow-400 rounded-full text-sm mr-2">JavaScript</span>
+                <span class="px-3 py-1 bg-indigo-900/30 text-indigo-400 rounded-full text-sm">Discord.js</span>
+            </div>
+            <button class="toggle-info mt-2 text-purple-400 hover:underline">Více info</button>
+            <div class="project-info hidden mt-2 text-gray-400 text-sm">
+                ZikyZone je multifunkční Discord bot s moderačními příkazy, zábavnými hrami a statistikami pro komunitní servery.
+            </div>
         </div>
+
     </section>
 
     <!-- Footer -->
@@ -102,12 +138,11 @@
         </div>
     </footer>
 
-    <!-- Script pro filtr a menu -->
+    <!-- Script pro filtr, menu a více info -->
     <script>
         // Filtrování projektů
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projects = document.querySelectorAll('.project-card');
-
         filterButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 const type = btn.getAttribute('data-type');
@@ -126,6 +161,15 @@
         const mobileMenu = document.getElementById('mobileMenu');
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Toggle více info
+        const toggleButtons = document.querySelectorAll('.toggle-info');
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const info = btn.nextElementSibling;
+                info.classList.toggle('hidden');
+            });
         });
     </script>
 </body>
