@@ -27,7 +27,7 @@
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
-        <div class="md:hidden hidden mt-4 pb-4" id="mobileMenu">
+        <div class="md:hidden hidden px-6 pb-4" id="mobileMenu">
             <a href="index.html" class="block py-2 nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
             <a href="specs.html" class="block py-2 nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
             <a href="info.html" class="block py-2 nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
@@ -47,7 +47,7 @@
             </div>
 
             <!-- O mně -->
-            <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="grid md:grid-cols-2 gap-10 items-center mb-20">
                 <div>
                     <img src="https://minotar.net/helm/BlobyCZ/600.png" alt="BlobyCZ" class="rounded-2xl shadow-lg mx-auto md:mx-0">
                 </div>
@@ -62,7 +62,7 @@
             </div>
 
             <!-- Projekty a technologie -->
-            <div class="mt-20">
+            <div class="mb-20">
                 <h2 class="text-3xl font-bold mb-8 flex items-center">
                     <i class="fas fa-rocket text-purple-400 mr-3"></i>
                     Projekty a technologie
@@ -71,7 +71,7 @@
             </div>
 
             <!-- Moje dovednosti -->
-            <div class="mt-20">
+            <div>
                 <h2 class="text-3xl font-bold mb-8 flex items-center">
                     <i class="fas fa-chart-line text-purple-400 mr-3"></i>
                     Moje dovednosti
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div>
-                        <p class="text-gray-400 mb-1">Node.js / JavaScript <span class="float-right">100%</span></p>
+                        <p class="text-gray-400 mb-1">Node.js / JavaScript <span class="float-right">90%</span></p>
                         <div class="w-full bg-gray-700 rounded-full h-4">
                             <div class="bg-yellow-400 h-4 rounded-full" style="width:90%"></div>
                         </div>
@@ -108,13 +108,13 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 border-t border-gray-700 py-8">
-        <div class="container mx-auto text-center text-gray-400">
+        <div class="container mx-auto text-center text-gray-400 px-6">
             <p>© 2025 BlobyCZ. Všechna práva vyhrazena.</p>
             <div class="mt-4 flex justify-center gap-6 text-xl">
-                <a href="https://discord.com/users/1178258199590228078" class="hover:text-indigo-400 transition">
+                <a href="https://discord.com/users/1178258199590228078" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition" aria-label="Discord">
                     <i class="fab fa-discord"></i>
                 </a>
-                <a href="https://github.com/bloby22" class="hover:text-gray-300 transition">
+                <a href="https://github.com/bloby22" target="_blank" rel="noopener noreferrer" class="hover:text-gray-300 transition" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -122,13 +122,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        const mobileBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
+    <script src="script/script.js"></script>
 </body>
 </html>
