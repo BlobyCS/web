@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlobyCZ | Info</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-purple-400 hover:text-purple-300 transition">
+                    <i class="fas fa-code mr-2"></i>BlobyCZ
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home mr-2"></i>Domů
+                    </a>
+                    <a href="specs.html" class="nav-link">
+                        <i class="fas fa-laptop mr-2"></i>Vybavení
+                    </a>
+                    <a href="info.html" class="nav-link active">
+                        <i class="fas fa-info-circle mr-2"></i>Informace
+                    </a>
+                </div>
+                <button class="md:hidden text-gray-300" id="mobileMenuBtn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div class="md:hidden hidden mt-4 pb-4" id="mobileMenu">
+                <a href="index.html" class="block py-2 nav-link">
+                    <i class="fas fa-home mr-2"></i>Domů
+                </a>
+                <a href="specs.html" class="block py-2 nav-link">
+                    <i class="fas fa-laptop mr-2"></i>Vybavení
+                </a>
+                <a href="info.html" class="block py-2 nav-link active">
+                    <i class="fas fa-info-circle mr-2"></i>Informace
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16 animate-fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                    <i class="fas fa-info-circle mr-4"></i>Informace
+                </h1>
+                <p class="text-xl text-gray-400">Kontakt a další informace</p>
+            </div>
+
+            <!-- Kontakt -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-envelope text-purple-400 mr-3"></i>
+                    Kontakt
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass-card p-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="fab fa-discord text-4xl text-indigo-400"></i>
+                            <div>
+                                <h3 class="text-xl font-bold">Discord</h3>
+                                <p class="text-gray-400">@blobycz</p>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-block mt-4 px-6 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-lg transition">
+                            Napsat zprávu
+                        </a>
+                    </div>
+
+                    <div class="glass-card p-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="fab fa-github text-4xl text-gray-300"></i>
+                            <div>
+                                <h3 class="text-xl font-bold">GitHub</h3>
+                                <p class="text-gray-400">github.com/bloby22</p>
+                            </div>
+                        </div>
+                        <a href="https://github.com/bloby22" class="inline-block mt-4 px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition">
+                            Navštívit profil
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projekty -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-rocket text-purple-400 mr-3"></i>
+                    Vybrané Projekty
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Minecraft plugin, Discord bot, NPM package cards zde zůstanou stejné -->
+                </div>
+            </div>
+
+            <!-- Statistiky a Spotify -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-chart-line text-purple-400 mr-3"></i>
+                    Statistiky & Hudba
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- GitHub stats -->
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fab fa-github text-3xl text-gray-300 mt-1"></i>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-2">GitHub Statistiky</h3>
+                                <p class="text-gray-400 mb-4">Aktuální počet repozitářů, hvězd a odhad commitů.</p>
+                                <div class="grid grid-cols-3 gap-3 text-center">
+                                    <div class="p-3 bg-gray-800 rounded">
+                                        <div class="text-sm text-gray-400">Repos</div>
+                                        <div id="repoCount" class="text-2xl font-bold mt-1">—</div>
+                                    </div>
+                                    <div class="p-3 bg-gray-800 rounded">
+                                        <div class="text-sm text-gray-400">Stars</div>
+                                        <div id="starCount" class="text-2xl font-bold mt-1">—</div>
+                                    </div>
+                                    <div class="p-3 bg-gray-800 rounded">
+                                        <div class="text-sm text-gray-400">Commits</div>
+                                        <div id="commitCount" class="text-2xl font-bold mt-1">—</div>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/bloby22" class="inline-block mt-4 px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition">
+                                    Zobrazit na GitHubu
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spotify now playing -->
+                    <div class="glass-card p-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fab fa-spotify text-3xl text-green-400 mt-1"></i>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-2">Právě hraje (Spotify)</h3>
+                                <p class="text-gray-400 mb-4">Zobrazím reálně, co právě poslouchám — autorizuj Spotify tlačítkem.</p>
+                                <div class="flex items-center gap-4">
+                                    <img id="spotifyAlbumImage" src="" alt="album" class="w-16 h-16 rounded-md object-cover bg-gray-800">
+                                    <div>
+                                        <div id="spotifyTrack" class="font-semibold">—</div>
+                                        <div id="spotifyArtist" class="text-sm text-gray-400">—</div>
+                                        <div class="mt-2 w-full bg-gray-800 h-2 rounded overflow-hidden">
+                                            <div id="spotifyProgress" style="height:100%; width:0%" class="bg-emerald-500"></div>
+                                        </div>
+                                        <div id="spotifyTime" class="text-xs text-gray-400 mt-1">0:00 / 0:00</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 flex gap-3">
+                                    <a href="http://bloby.eu/login" class="px-4 py-2 bg-spotify-green rounded text-black font-medium hover:opacity-90 transition">
+                                        Přihlásit do Spotify
+                                    </a>
+                                    <button id="refreshSpotify" class="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition">Aktualizovat</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8 mt-20">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 Bloby. Udělal z <i class="fas fa-heart text-red-500"></i></p>
+        </div>
+    </footer>
+
+    <script src="./script/script.js"></script>
+</body>
+</html>
