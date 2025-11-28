@@ -11,38 +11,26 @@
 </head>
 <body class="bg-gray-900 text-gray-100">
     <!-- Navbar -->
-    <nav class="fixed w-full top-0 z-50 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold text-purple-400 hover:text-purple-300 transition">
-                    <i class="fas fa-code mr-2"></i>Bloby
-                </a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link">
-                        <i class="fas fa-home mr-2"></i>Domů
-                    </a>
-                    <a href="specs.html" class="nav-link active">
-                        <i class="fas fa-laptop mr-2"></i>Vybavení
-                    </a>
-                    <a href="info.html" class="nav-link">
-                        <i class="fas fa-info-circle mr-2"></i>Informace
-                    </a>
-                </div>
-                <button class="md:hidden text-gray-300" id="mobileMenuBtn">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+        <nav class="fixed w-full top-0 z-50 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-purple-400 hover:text-purple-300 transition">
+                <i class="fas fa-code mr-2"></i>Bloby
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
+                <a href="specs.html" class="nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
+                <a href="info.html" class="nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+                <a href="about.html" class="nav-link active"><i class="fas fa-user mr-1"></i>O mně</a>
             </div>
-            <div class="md:hidden hidden mt-4 pb-4" id="mobileMenu">
-                <a href="index.html" class="block py-2 nav-link">
-                    <i class="fas fa-home mr-2"></i>Domů
-                </a>
-                <a href="specs.html" class="block py-2 nav-link active">
-                    <i class="fas fa-laptop mr-2"></i>Vybavení
-                </a>
-                <a href="info.html" class="block py-2 nav-link">
-                    <i class="fas fa-info-circle mr-2"></i>Informace
-                </a>
-            </div>
+            <button class="md:hidden text-gray-300" id="mobileMenuBtn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div class="md:hidden hidden mt-4 pb-4" id="mobileMenu">
+            <a href="index.html" class="block py-2 nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
+            <a href="specs.html" class="block py-2 nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
+            <a href="info.html" class="block py-2 nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+            <a href="about.html" class="block py-2 nav-link active"><i class="fas fa-user mr-1"></i>O mně</a>
         </div>
     </nav>
 
@@ -318,4 +306,5 @@
 
     <script src="script/script.js"></script>
 </body>
+
 </html>
