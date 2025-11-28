@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://minotar.net/helm/BlobyCZ/600.png" type="image/png" />
+    <title>O mně | BlobyCZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-purple-400 hover:text-purple-300 transition">
+                <i class="fas fa-code mr-2"></i>Bloby
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
+                <a href="specs.html" class="nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
+                <a href="info.html" class="nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+                <a href="about.html" class="nav-link active"><i class="fas fa-user mr-1"></i>O mně</a>
+            </div>
+            <button class="md:hidden text-gray-300" id="mobileMenuBtn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div class="md:hidden hidden mt-4 pb-4" id="mobileMenu">
+            <a href="index.html" class="block py-2 nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
+            <a href="specs.html" class="block py-2 nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
+            <a href="info.html" class="block py-2 nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+            <a href="about.html" class="block py-2 nav-link active"><i class="fas fa-user mr-1"></i>O mně</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16 animate-fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                    <i class="fas fa-user mr-4"></i>O mně
+                </h1>
+                <p class="text-xl text-gray-400">Trochu o mně a mých projektech</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <img src="https://minotar.net/helm/BlobyCZ/600.png" alt="BlobyCZ" class="rounded-2xl shadow-lg mx-auto md:mx-0">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Ahoj, jsem Bloby</h2>
+                    <p class="text-gray-400 mb-4">Jsem nadšenec do vývoje a programování, specializuji se na Java, Node.js, Discord.js a tvorbu Minecraft pluginů. Rád experimentuji s novými technologiemi a vytvářím projekty, které nejen fungují, ale mají i smysl a přidanou hodnotu.</p>
+                    <p class="text-gray-400 mb-4">Kromě vývoje se věnuji hraní her, poslouchání hudby a učení nových dovedností. Moje projekty jsou veřejně dostupné na GitHubu a Discordu, kde můžete sledovat mé aktualizace a novinky.</p>
+                    <a href="info.html" class="inline-block mt-4 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg transition text-white font-semibold">
+                        Kontaktujte mě
+                    </a>
+                </div>
+            </div>
+
+            <!-- Další sekce -->
+            <div class="mt-20">
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-rocket text-purple-400 mr-3"></i>
+                    Projekty a technologie
+                </h2>
+                <p class="text-gray-400 mb-4">Většinu svých projektů vytvářím s využitím moderních technologií jako Java, Spigot, Node.js, TypeScript, NPM a další. Také pravidelně používám IntelliJ IDEA a Visual Studio Code pro vývoj, a testuji své projekty na Windows i Linux prostředích.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>© 2025 BlobyCZ. Všechna práva vyhrazena.</p>
+            <div class="mt-4 flex justify-center gap-6 text-xl">
+                <a href="https://discord.com/users/1178258199590228078" class="hover:text-indigo-400 transition">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://github.com/bloby22" class="hover:text-gray-300 transition">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
