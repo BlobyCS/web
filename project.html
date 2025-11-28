@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://minotar.net/helm/BlobyCZ/600.png" type="image/png" />
+    <title>BlobyCZ | Projekty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-purple-400 hover:text-purple-300 transition">
+                <i class="fas fa-code mr-2"></i>Bloby
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
+                <a href="projects.html" class="nav-link active"><i class="fas fa-folder-open mr-1"></i>Projekty</a>
+                <a href="specs.html" class="nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
+                <a href="info.html" class="nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+                <a href="about.html" class="nav-link"><i class="fas fa-user mr-1"></i>O mně</a>
+            </div>
+            <button class="md:hidden text-gray-300" id="mobileMenuBtn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div class="md:hidden hidden px-6 pb-4" id="mobileMenu">
+            <a href="index.html" class="block py-2 nav-link"><i class="fas fa-home mr-1"></i>Domů</a>
+            <a href="projects.html" class="block py-2 nav-link active"><i class="fas fa-folder-open mr-1"></i>Projekty</a>
+            <a href="specs.html" class="block py-2 nav-link"><i class="fas fa-laptop mr-1"></i>Vybavení</a>
+            <a href="info.html" class="block py-2 nav-link"><i class="fas fa-info-circle mr-1"></i>Informace</a>
+            <a href="about.html" class="block py-2 nav-link"><i class="fas fa-user mr-1"></i>O mně</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center mb-16 animate-fade-in">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                Moje Projekty
+            </h1>
+            <p class="text-xl text-gray-400">Ukázka mých NPM balíčků, Discord botů a Minecraft pluginů</p>
+        </div>
+
+        <!-- Projekty Grid -->
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+            <div class="glass-card p-6 flex flex-col items-start animate-slide-up">
+                <h3 class="text-2xl font-bold mb-2"><i class="fab fa-js mr-2"></i>InsaneKick</h3>
+                <p class="text-gray-300 mb-4">Minecraft plugin pro eventy a různé funkce při pádu.</p>
+                <a href="#" class="text-purple-400 hover:underline">Více info</a>
+            </div>
+            <div class="glass-card p-6 flex flex-col items-start animate-slide-up">
+                <h3 class="text-2xl font-bold mb-2"><i class="fab fa-node-js mr-2"></i>Quanta</h3>
+                <p class="text-gray-300 mb-4">NPM balíček pro rychlé utility a backend funkce.</p>
+                <a href="#" class="text-purple-400 hover:underline">Více info</a>
+            </div>
+            <div class="glass-card p-6 flex flex-col items-start animate-slide-up">
+                <h3 class="text-2xl font-bold mb-2"><i class="fab fa-discord mr-2"></i>ZikyZone</h3>
+                <p class="text-gray-300 mb-4">Discord bot s funkcemi pro moderaci a zábavu.</p>
+                <a href="#" class="text-purple-400 hover:underline">Více info</a>
+            </div>
+            <!-- Můžeš přidat další projekty stejným způsobem -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8 mt-20">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2024 Bloby. Udělal z <i class="fas fa-heart text-red-500"></i></p>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
