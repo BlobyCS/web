@@ -1,5 +1,5 @@
-/* Next-Gen CSS - Future-Ready Styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+/* Next-Gen CSS - Clean & Modern */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base, components, utilities;
 
@@ -88,7 +88,7 @@
     position: relative;
   }
   
-  /* Neural Network Background */
+  /* Ambient Background */
   body::before {
     content: '';
     position: fixed;
@@ -97,7 +97,6 @@
       radial-gradient(circle at 20% 30%, oklch(40% 0.15 var(--hue-primary) / 0.08) 0%, transparent 50%),
       radial-gradient(circle at 80% 70%, oklch(40% 0.15 var(--hue-secondary) / 0.06) 0%, transparent 50%),
       radial-gradient(circle at 50% 50%, oklch(35% 0.12 var(--hue-accent) / 0.04) 0%, transparent 60%);
-    animation: neuralPulse 15s ease-in-out infinite;
     pointer-events: none;
     z-index: -1;
   }
@@ -115,21 +114,10 @@
     pointer-events: none;
     z-index: -1;
   }
-  
-  @keyframes neuralPulse {
-    0%, 100% { 
-      opacity: 1;
-      transform: scale(1) rotate(0deg); 
-    }
-    50% { 
-      opacity: 0.85;
-      transform: scale(1.05) rotate(2deg); 
-    }
-  }
 }
 
 @layer components {
-  /* Next-Gen Glass Morphism */
+  /* Clean Glass Morphism */
   .glass-card {
     background: 
       linear-gradient(135deg, 
@@ -142,7 +130,6 @@
     position: relative;
     overflow: hidden;
     transition: all 0.4s var(--ease-smooth);
-    container-type: inline-size;
   }
   
   .glass-card::before {
@@ -155,27 +142,6 @@
     opacity: 0;
     transition: opacity 0.4s var(--ease-smooth);
     pointer-events: none;
-  }
-  
-  .glass-card::after {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: conic-gradient(from 180deg at 50% 50%, 
-      var(--primary), 
-      var(--secondary), 
-      var(--accent), 
-      var(--primary));
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.4s var(--ease-smooth);
-    filter: blur(8px);
-    animation: rotateGradient 6s linear infinite;
-  }
-  
-  @keyframes rotateGradient {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
   }
   
   .glass-card:hover {
@@ -194,11 +160,7 @@
     opacity: 1;
   }
   
-  .glass-card:hover::after {
-    opacity: 0.6;
-  }
-  
-  /* Futuristic Navigation */
+  /* Modern Navigation */
   .nav-link {
     color: var(--text-secondary);
     padding: var(--space-3) var(--space-5);
@@ -258,7 +220,7 @@
     box-shadow: 0 0 16px var(--primary);
   }
   
-  /* Holographic Social Icons */
+  /* Clean Social Icons */
   .social-icon {
     width: 56px;
     height: 56px;
@@ -285,20 +247,6 @@
     transition: opacity 0.4s var(--ease-smooth);
   }
   
-  .social-icon::after {
-    content: '';
-    position: absolute;
-    inset: -100%;
-    background: conic-gradient(from 0deg, transparent 0deg 180deg, white 180deg 360deg);
-    opacity: 0;
-    transition: opacity 0.4s var(--ease-smooth);
-    animation: spin 3s linear infinite;
-  }
-  
-  @keyframes spin {
-    100% { transform: rotate(360deg); }
-  }
-  
   .social-icon:hover {
     border-color: var(--primary);
     transform: translateY(-6px) scale(1.1);
@@ -313,16 +261,12 @@
     opacity: 0.2;
   }
   
-  .social-icon:hover::after {
-    opacity: 0.2;
-  }
-  
   .social-icon > * {
     position: relative;
     z-index: 1;
   }
   
-  /* Quantum Cards */
+  /* Modern Cards */
   .stat-card,
   .skill-card {
     background: linear-gradient(135deg, 
@@ -373,7 +317,7 @@
     opacity: 1;
   }
   
-  /* Neon Buttons */
+  /* Clean Buttons */
   button, .button {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     border: none;
@@ -417,32 +361,22 @@
 }
 
 @layer utilities {
-  /* Holographic Text */
+  /* Smooth Gradient Text */
   .gradient-text {
     background: linear-gradient(135deg, 
       var(--primary-hover) 0%, 
-      var(--secondary) 40%,
-      var(--accent) 70%,
-      var(--primary-hover) 100%);
-    background-size: 200% auto;
+      var(--secondary) 50%,
+      var(--accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradientFlow 8s ease infinite;
     font-weight: 800;
     letter-spacing: -0.03em;
-    position: relative;
   }
   
-  @keyframes gradientFlow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-  
-  /* Quantum Loading */
+  /* Clean Loading */
   .loading {
     opacity: 0.7;
-    animation: quantumPulse 2s ease-in-out infinite;
     position: relative;
     overflow: hidden;
   }
@@ -456,29 +390,24 @@
       oklch(100% 0 0 / 0.15), 
       transparent);
     transform: translateX(-100%);
-    animation: quantumScan 2s ease-in-out infinite;
+    animation: loadingScan 2s ease-in-out infinite;
   }
   
-  @keyframes quantumPulse {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
-  }
-  
-  @keyframes quantumScan {
+  @keyframes loadingScan {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(200%); }
   }
   
-  /* Cinematic Animations */
+  /* Smooth Animations */
   .animate-fade-in {
-    animation: cinematicFadeIn 0.8s var(--ease-smooth) forwards;
+    animation: fadeIn 0.8s var(--ease-smooth) forwards;
   }
   
   .animate-slide-up {
-    animation: cinematicSlideUp 1s var(--ease-smooth) forwards;
+    animation: slideUp 1s var(--ease-smooth) forwards;
   }
   
-  @keyframes cinematicFadeIn {
+  @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(32px) scale(0.96);
@@ -491,7 +420,7 @@
     }
   }
   
-  @keyframes cinematicSlideUp {
+  @keyframes slideUp {
     from {
       opacity: 0;
       transform: translateY(48px) scale(0.94);
@@ -504,7 +433,7 @@
     }
   }
   
-  /* Cyberpunk Scrollbar */
+  /* Modern Scrollbar */
   ::-webkit-scrollbar {
     width: 14px;
   }
