@@ -191,7 +191,7 @@ function createMatchHistory(): HTMLElement {
   return wrapper;
 }
 
-export function Profile(params: RouteParams): HTMLElement {
+export function ProfilePage(params: RouteParams): HTMLElement {
   const raw = decodeURIComponent(params['player'] ?? 'Unknown');
   const parts = raw.includes('#') ? raw.split('#') : [raw, 'EUW'];
   const playerName = parts[0];
