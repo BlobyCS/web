@@ -2,37 +2,28 @@ import { Footer } from '../components/Footer.js';
 
 export function Terms(): HTMLElement {
   document.title = 'Terms of Service | Swiftly';
-  
   const page = document.createElement('div');
   page.classList.add('page');
-  
   const nav = document.createElement('nav');
   nav.classList.add('nav');
-  
   const logo = document.createElement('a');
   logo.classList.add('nav__logo');
   logo.setAttribute('href', '/');
   logo.innerHTML = 'SWIFT<span>LY</span>';
   nav.appendChild(logo);
-  
   const section = document.createElement('section');
   section.classList.add('section');
-  
   const container = document.createElement('div');
   container.classList.add('container');
   container.style.maxWidth = '780px';
-  
   const hero = document.createElement('div');
   hero.style.cssText = 'margin-bottom: 3rem;';
-  
   const iconWrap = document.createElement('div');
   iconWrap.style.cssText = 'font-size: 2.5rem; color: var(--color-accent-red); margin-bottom: 1rem;';
   iconWrap.innerHTML = '<i class="fa-solid fa-file-contract"></i>';
-  
   const heading = document.createElement('h1');
   heading.style.cssText = 'font-family: var(--font-display); font-size: 2.25rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-primary); margin-bottom: 0.5rem;';
   heading.textContent = 'Terms of Service';
-  
   const updated = document.createElement('p');
   updated.style.cssText = 'font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); letter-spacing: 0.1em;';
   updated.textContent = 'Posledni aktualizace: 3. března 2026 ';
@@ -42,7 +33,6 @@ export function Terms(): HTMLElement {
   hero.appendChild(heading);
   hero.appendChild(updated);
   hero.appendChild(divider);
-  
   type Row = { icon: string; title: string; body: string };
   const rows: Row[] = [
   {
