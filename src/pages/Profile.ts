@@ -2,19 +2,11 @@ import { Footer } from '../components/Footer';
 
 type RouteParams = Record<string, string>;
 
-interface AgentAsset {
-  displayName: string;
-  displayIcon: string;
-}
-
-interface MapAsset {
-  displayName: string;
-  splash: string;
-}
-
 interface MatchStat {
   map: string;
+  mapImg: string;
   agent: string;
+  agentImg: string;
   kills: number;
   deaths: number;
   assists: number;
@@ -24,35 +16,31 @@ interface MatchStat {
   rr: number;
 }
 
+// URLs from media.valorant-api.com — no fetch needed, browser loads img directly
+// CORS restrictions apply only to fetch/XHR, not to <img> src
+const MAP_IMGS: Record<string, string> = {
+  Ascent:   'https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png',
+  Bind:     'https://media.valorant-api.com/maps/2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba/splash.png',
+  Haven:    'https://media.valorant-api.com/maps/2bee0dc9-4ffe-519b-1cbd-7825ad97bd2d/splash.png',
+  Fracture: 'https://media.valorant-api.com/maps/b529448b-4d60-346e-e89e-00a4c527a405/splash.png',
+  Pearl:    'https://media.valorant-api.com/maps/fd267378-4d1d-484f-ff52-77821ed10dc2/splash.png',
+};
+
+const AGENT_IMGS: Record<string, string> = {
+  Jett:    'https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png',
+  Reyna:   'https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/displayicon.png',
+  Omen:    'https://media.valorant-api.com/agents/8e253930-4c05-31dd-1b6c-968525494517/displayicon.png',
+  Chamber: 'https://media.valorant-api.com/agents/22697054-9a09-be1e-c9a4-11a7b8179513/displayicon.png',
+  Sage:    'https://media.valorant-api.com/agents/569fdd95-4d10-43ab-ca70-79becc718b46/displayicon.png',
+};
+
 const DEMO_MATCHES: MatchStat[] = [
-  { map: 'Ascent',   agent: 'Jett',    kills: 24, deaths: 9,  assists: 4, hs: 41, score: '13-7',  result: 'WIN',  rr: 22  },
-  { map: 'Bind',     agent: 'Reyna',   kills: 18, deaths: 14, assists: 2, hs: 28, score: '9-13',  result: 'LOSS', rr: -14 },
-  { map: 'Haven',    agent: 'Omen',    kills: 20, deaths: 11, assists: 7, hs: 35, score: '13-10', result: 'WIN',  rr: 18  },
-  { map: 'Fracture', agent: 'Chamber', kills: 27, deaths: 8,  assists: 3, hs: 44, score: '13-5',  result: 'WIN',  rr: 25  },
-  { map: 'Pearl',    agent: 'Sage',    kills: 11, deaths: 13, assists: 9, hs: 22, score: '10-13', result: 'LOSS', rr: -12 },
+  { map: 'Ascent',   mapImg: MAP_IMGS.Ascent,   agent: 'Jett',    agentImg: AGENT_IMGS.Jett,    kills: 24, deaths: 9,  assists: 4, hs: 41, score: '13-7',  result: 'WIN',  rr: 22  },
+  { map: 'Bind',     mapImg: MAP_IMGS.Bind,     agent: 'Reyna',   agentImg: AGENT_IMGS.Reyna,   kills: 18, deaths: 14, assists: 2, hs: 28, score: '9-13',  result: 'LOSS', rr: -14 },
+  { map: 'Haven',    mapImg: MAP_IMGS.Haven,    agent: 'Omen',    agentImg: AGENT_IMGS.Omen,    kills: 20, deaths: 11, assists: 7, hs: 35, score: '13-10', result: 'WIN',  rr: 18  },
+  { map: 'Fracture', mapImg: MAP_IMGS.Fracture, agent: 'Chamber', agentImg: AGENT_IMGS.Chamber, kills: 27, deaths: 8,  assists: 3, hs: 44, score: '13-5',  result: 'WIN',  rr: 25  },
+  { map: 'Pearl',    mapImg: MAP_IMGS.Pearl,    agent: 'Sage',    agentImg: AGENT_IMGS.Sage,    kills: 11, deaths: 13, assists: 9, hs: 22, score: '10-13', result: 'LOSS', rr: -12 },
 ];
-
-async function fetchAgents(): Promise<Record<string, AgentAsset>> {
-  const res = await fetch('https://valorant-api.com/v1/agents?isPlayableCharacter=true');
-  const json = await res.json();
-  const result: Record<string, AgentAsset> = {};
-  for (const a of json.data) {
-    result[a.displayName] = { displayName: a.displayName, displayIcon: a.displayIcon };
-  }
-  return result;
-}
-
-async function fetchMaps(): Promise<Record<string, MapAsset>> {
-  const res = await fetch('https://valorant-api.com/v1/maps');
-  const json = await res.json();
-  const result: Record<string, MapAsset> = {};
-  for (const m of json.data) {
-    if (m.displayName && m.splash) {
-      result[m.displayName] = { displayName: m.displayName, splash: m.splash };
-    }
-  }
-  return result;
-}
 
 function createNav(): HTMLElement {
   const nav = document.createElement('nav');
@@ -104,11 +92,7 @@ function createStatCard(label: string, value: string, color?: string): HTMLEleme
   return card;
 }
 
-function createMatchRow(
-  m: MatchStat,
-  agents: Record<string, AgentAsset>,
-  maps: Record<string, MapAsset>,
-): HTMLElement {
+function createMatchRow(m: MatchStat): HTMLElement {
   const win = m.result === 'WIN';
 
   const row = document.createElement('div');
@@ -123,12 +107,14 @@ function createMatchRow(
   const stripe = document.createElement('div');
   stripe.style.cssText = 'background:' + (win ? '#4ade80' : 'var(--color-accent-red)') + ';';
 
+  // map thumbnail
   const mapCell = document.createElement('div');
   mapCell.style.cssText = 'position:relative;overflow:hidden;height:60px;';
 
   const mapImg = document.createElement('img');
-  mapImg.src = maps[m.map]?.splash ?? '';
+  mapImg.src = m.mapImg;
   mapImg.alt = m.map;
+  mapImg.loading = 'lazy';
   mapImg.style.cssText = 'width:100%;height:100%;object-fit:cover;opacity:0.65;display:block;';
 
   const mapLabel = document.createElement('span');
@@ -140,17 +126,20 @@ function createMatchRow(
   mapCell.appendChild(mapImg);
   mapCell.appendChild(mapLabel);
 
+  // agent icon
   const agentCell = document.createElement('div');
   agentCell.style.cssText = 'display:flex;align-items:center;justify-content:center;'
     + 'background:var(--color-bg-elevated);border-left:1px solid var(--color-border);';
 
   const agentImg = document.createElement('img');
-  agentImg.src = agents[m.agent]?.displayIcon ?? '';
+  agentImg.src = m.agentImg;
   agentImg.alt = m.agent;
+  agentImg.loading = 'lazy';
   agentImg.style.cssText = 'width:44px;height:44px;object-fit:contain;';
 
   agentCell.appendChild(agentImg);
 
+  // result + score
   const resultCell = document.createElement('div');
   resultCell.style.cssText = 'display:flex;flex-direction:column;align-items:center;justify-content:center;'
     + 'padding:0 0.875rem;gap:0.2rem;border-left:1px solid var(--color-border);';
@@ -172,6 +161,7 @@ function createMatchRow(
 
   const spacer = document.createElement('div');
 
+  // K / D / A
   const kdaCell = document.createElement('div');
   kdaCell.style.cssText = 'display:flex;flex-direction:column;align-items:center;justify-content:center;'
     + 'gap:0.15rem;border-left:1px solid var(--color-border);';
@@ -189,6 +179,7 @@ function createMatchRow(
   kdaCell.appendChild(kdaVal);
   kdaCell.appendChild(kdaLbl);
 
+  // HS %
   const hsCell = document.createElement('div');
   hsCell.style.cssText = 'display:flex;flex-direction:column;align-items:center;justify-content:center;'
     + 'gap:0.15rem;border-left:1px solid var(--color-border);';
@@ -205,6 +196,7 @@ function createMatchRow(
   hsCell.appendChild(hsVal);
   hsCell.appendChild(hsLbl);
 
+  // RR
   const rrCell = document.createElement('div');
   rrCell.style.cssText = 'display:flex;align-items:center;justify-content:center;'
     + 'border-left:1px solid var(--color-border);';
@@ -225,13 +217,6 @@ function createMatchRow(
   row.appendChild(hsCell);
   row.appendChild(rrCell);
 
-  return row;
-}
-
-function createSkeletonRow(): HTMLElement {
-  const row = document.createElement('div');
-  row.style.cssText = 'height:60px;background:var(--color-bg-elevated);'
-    + 'border-bottom:1px solid var(--color-border);opacity:0.5;';
   return row;
 }
 
@@ -271,6 +256,7 @@ export function Profile(params: RouteParams): HTMLElement {
     container.appendChild(banner);
   }
 
+  // profile header
   const header = document.createElement('div');
   header.style.cssText = 'display:flex;align-items:center;gap:1.5rem;padding:1.5rem;'
     + 'background:var(--color-bg-card);border:1px solid var(--color-border);'
@@ -353,6 +339,7 @@ export function Profile(params: RouteParams): HTMLElement {
   header.appendChild(nameBlock);
   header.appendChild(rankBlock);
 
+  // stat cards
   const statsRow = document.createElement('div');
   statsRow.style.cssText = 'display:flex;gap:0.625rem;margin-bottom:1.5rem;flex-wrap:wrap;';
   statsRow.appendChild(createStatCard('KDA', '2.31', 'var(--color-accent-red)'));
@@ -362,6 +349,7 @@ export function Profile(params: RouteParams): HTMLElement {
   statsRow.appendChild(createStatCard('ACS', '241'));
   statsRow.appendChild(createStatCard('Kills / Z', '18.4'));
 
+  // match history
   const matchHeading = document.createElement('div');
   matchHeading.style.cssText = 'display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;';
 
@@ -393,28 +381,7 @@ export function Profile(params: RouteParams): HTMLElement {
   });
 
   matchTable.appendChild(colHead);
-
-  // skeleton rows while assets load
-  const skeletons: HTMLElement[] = [];
-  for (let i = 0; i < DEMO_MATCHES.length; i++) {
-    const s = createSkeletonRow();
-    skeletons.push(s);
-    matchTable.appendChild(s);
-  }
-
-  // fetch both in parallel then replace skeletons with real rows
-  Promise.all([fetchAgents(), fetchMaps()]).then(([agents, maps]) => {
-    skeletons.forEach((s) => s.remove());
-    DEMO_MATCHES.forEach((m) => {
-      matchTable.appendChild(createMatchRow(m, agents, maps));
-    });
-  }).catch(() => {
-    skeletons.forEach((s) => {
-      s.style.cssText = 'padding:1rem 1.5rem;font-family:var(--font-mono);font-size:0.75rem;'
-        + 'color:var(--color-text-muted);border-bottom:1px solid var(--color-border);';
-      s.textContent = 'Nepodařilo se načíst data z valorant-api.com';
-    });
-  });
+  DEMO_MATCHES.forEach((m) => matchTable.appendChild(createMatchRow(m)));
 
   container.appendChild(header);
   container.appendChild(statsRow);
